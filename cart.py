@@ -37,7 +37,7 @@ class usercart:
     
     def add_item_to_cart(self,productid):
         self.items.append(productid)
-        print 'Product %d added to cart' %productid
+        print ('Product %d added to cart') %productid
 
     def itemcount(self):
         return len(self.items)
@@ -46,7 +46,7 @@ class usercart:
         items = self.items
         cprint ('products in the cart','red','on_white')
         for item in items:
-            print 'function not in use %s' %item
+            print ('function not in use %s') %item
         return items
         
     def retrieve_saved_items(self):
