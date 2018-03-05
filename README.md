@@ -1,8 +1,8 @@
-webstore app for Altiscope
+################  webstore app for Altiscope  ####################
 This code needs boto3, termcolor and pymysql packages, install them or run depend.py to install these above packages and then you're ready to run the code
 
 -----------------------------instructions-------------------------
-
+--------------- Running the code -----------------------------
 Run shop.py and follow the prompts
 
 Valid usernames are : ironman or wonderwoman or sully
@@ -25,6 +25,14 @@ To proceed with the existing cart enter 1 or -1 to remove items
 Right now you can only remove items once before it automatically checks out
 
 To save cart and logout enter -1
+
+---------------- Adding a product to catalog ---------------------------------------
+
+To add a product to the catalog, change the input fields in the add_product.py script and run. (please
+use a number greater than 500 for sku to avoid error (duplicate primary keys) in MySQL)
+----------------- Purchase history ---------------------------------------------
+
+To view purchase history of a user, edit the username variable in the purchasehistory.py and run the script
 
 
 
