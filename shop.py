@@ -15,7 +15,7 @@ username = raw_input("username: ")
 #authenticate the user
 valid = useractions.authenticate_user(conx,username)
 if valid:
-    print 'Welcome to the webstore'
+    print ('Welcome to the webstore')
 else:
     sys.exit('invalid username, login again and enter valid username')
 
