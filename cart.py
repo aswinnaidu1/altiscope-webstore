@@ -37,7 +37,7 @@ class usercart:
     
     def add_item_to_cart(self,productid):
         self.items.append(productid)
-        print ('Product %d added to cart') %productid
+        print ('Product %(proid)s added to cart' %{'proid':productid})
 
     def itemcount(self):
         return len(self.items)

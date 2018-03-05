@@ -27,7 +27,7 @@ def go_shopping(conx,crt):
     while not changecategory:
         dynamodb_service.get_from_dynamodb(category)
         cprint ('\n 1) Enter sku (# in Decimal(sku) ) of the product you want to add to cart \n 2) Or enter the number 0 to checkout \n 3) Or enter 1 to change product category \n 4) Or enter -1 to save cart and logout: \n','red','on_white')
-        productid = input("")
+        productid = int(input(""))
         # productid = input("\nenter sku (# in Decimal(sku) ) of the product you want to add to cart\n \n Enter the number 0 to checkout \n enter 1 to changecategory \n enter -1 to save cart and logout: \n")
         if productid == 0:
             checkout_cart(crt)
@@ -45,9 +45,9 @@ def go_shopping(conx,crt):
 def checkout_cart(cart):
     list_items_in_checkoutcart(cart)
     cprint('\n enter the number 1 to checkout and -1 to remove items from cart \n','red','on_white')
-    option = input("")
+    option = int(input(""))
     if option == -1:
-        deletesku = input("\nenter sku of the item that you want to delete \n")
+        deletesku = int(input("\nenter sku of the item that you want to delete \n"))
         with cart.conx as cursor:
             sql = "select * from cartitems where cartid = %s and sku = %s"
             count = cursor.execute(sql,(cart.id,deletesku))
@@ -55,7 +55,7 @@ def checkout_cart(cart):
             cursor.close()
         
         if count > 1:
-            deletelimit = input("\nhow many do you want to delete \n")
+            deletelimit = int(input("\nhow many do you want to delete \n"))
         else:
             deletelimit = 1
         with cart.conx as cursor:
@@ -119,7 +119,7 @@ def list_items_in_checkoutcart(cart):
         
 def get_categories():
     cprint('\nWhat are you looking for? Enter book, shoes or laptop \n','red','on_white')
-    category = raw_input("")
+    category = input("")
     cprint("\n products in that category: \n",'red','on_white')
     return category
         

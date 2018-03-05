@@ -1,16 +1,17 @@
 #shop the webstore
 import sys
+import os
 import awsdbconnect
 import useractions
 import cart
 import purchasehistory
 from termcolor import colored, cprint
-# import cartface
+
 conx = awsdbconnect.connecttodb()
 dydbproducts = awsdbconnect.connecttodynamodb()
 # authenticate username and password
 cprint ("Enter username: enter either ironman or wonderwoman or sully", 'red','on_white')
-username = raw_input("username: ")
+username = input("username: ")
 # username = 'aviator'
 #authenticate the user
 valid = useractions.authenticate_user(conx,username)

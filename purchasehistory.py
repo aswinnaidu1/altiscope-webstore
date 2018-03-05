@@ -25,7 +25,7 @@ def get_recent_order(username):
         sql = "select max(cartid) from cart where username = %s and ordered = 1"
         rowcount = cursor.execute(sql,username)
         for item in cursor:
-            print ("\n Items in recent order no %s") %item[0]
+            print ('\n Items in recent order ') #%(str(item[0]))
             with conx1 as cursor1:
                 sql1 = "select sku from cartitems where cartid = %s"
                 skucount = cursor1.execute(sql1,item[0])
